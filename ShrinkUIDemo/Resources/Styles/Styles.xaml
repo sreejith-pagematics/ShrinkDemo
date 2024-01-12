@@ -1,0 +1,5009 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Style x:Key="LoginEntryImageStyle" TargetType="Image">
+        <Setter Property="Margin" Value="5,0"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LogoImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="250"
+					Tablet="375"
+					Desktop="250"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="60"
+					Tablet="90"
+					Desktop="60"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LoginHeaderTextStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LoginEntryStyle" TargetType="Entry">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="PlaceholderColor" Value="#7e7e7e" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="14"
+				    Tablet="21"
+				    Desktop="14"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TwilioEditorStyle" TargetType="Editor">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="AutoSize" Value="TextChanges" />
+        <Setter Property="PlaceholderColor" Value="#7e7e7e" />
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="Margin" Value="10,0,0,0" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LoginEntryFrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=25, Tablet=30}" />
+        <Setter Property="Padding" Value="5,5,10,5" />
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+                x:TypeArguments="x:Double"
+                Phone="50"
+                Tablet="60"
+                Desktop="50"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AddNewNumberEntryFrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="Margin" Value="3" />
+        <Setter Property="BorderColor" Value="#dddddd" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+            x:TypeArguments="x:Double"
+            Phone="50"
+            Tablet="60"
+            Desktop="50"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+                x:TypeArguments="x:Double"
+                Phone="50"
+                Tablet="60"
+                Desktop="50"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TwilioEntryFrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=25, Tablet=30}" />
+        <Setter Property="Padding" Value="5,5,10,5" />
+        <Setter Property="BackgroundColor" Value="White" />
+    </Style>
+
+
+    <Style x:Key="LoginFrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=30, Tablet=30}" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="Margin" Value="30,60,30,0" />
+        <Setter Property="BackgroundColor" Value="#e6e6e6" />
+        <Setter Property="BorderColor" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="BackgroundColor" Value="#f3872c" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="50"
+				    Tablet="75"
+				    Desktop="50"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SocialMediaImageStyle" TargetType="Image">
+        <Setter Property="Margin" Value="15,0,0,0"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="30"
+					Tablet="45"
+					Desktop="30"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="30"
+					Tablet="45"
+					Desktop="30"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LoginFooterTextStyle" TargetType="Label">
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <!--Verification Code Page-->
+    <Style x:Key="VerificationCodeEntryStyle" TargetType="Entry">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="PlaceholderColor" Value="#7e7e7e" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="20"
+				    Tablet="30"
+				    Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="VCodeFrameStyle" TargetType="Frame">
+        <Setter Property="Margin" Value="30,60,30,0" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=30, Tablet=30}" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="BackgroundColor" Value="#e6e6e6" />
+    </Style>
+
+    <Style x:Key="VerificationCodePage_ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="BackgroundColor" Value="#4cb050" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+				    Tablet="27"
+				    Desktop="18"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="200"
+				    Tablet="300"
+				    Desktop="200"/>
+        </Setter>
+    </Style>
+
+    <!--Twilio Info Page-->
+    <Style x:Key="TwilioTextStyle" TargetType="Label">
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TwilioInfoEditorStyle" TargetType="Editor">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="PlaceholderColor" Value="#7e7e7e" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <!--Home Tabs-->
+    <Style x:Key="HomeTabFrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="BackgroundColor" Value="#e6e6e6" />
+        <Setter Property="BorderColor" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="InnerFrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=15, Tablet=30}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+    </Style>
+
+    <Style x:Key="FooterLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="13"
+					Tablet="20"
+					Desktop="13"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="FooterImageStyle" TargetType="Image">
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="25"
+					Tablet="40"
+					Desktop="25"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="25"
+					Tablet="40"
+					Desktop="25"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HeaderTopImageStyle" TargetType="Image">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="10"
+					Tablet="15"
+					Desktop="10"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="10"
+					Tablet="15"
+					Desktop="10"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LocationList_ImageStyle" TargetType="Image">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="35"
+					Tablet="53"
+					Desktop="35"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="35"
+					Tablet="53"
+					Desktop="35"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HeaderTextStyle" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <!--KeyPad Tab-->
+    <Style x:Key="KeypadImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="Source" Value="ic_white_bg_xx.png" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="80"
+                        Tablet="120"
+                        Desktop="80"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="80"
+                        Tablet="120"
+                        Desktop="80"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="KeypadClearImageStyle" TargetType="Image">
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="10"
+                    Tablet="120"
+                    Desktop="80"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="10"
+                    Tablet="120"
+                    Desktop="80"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="KeypadLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="28"
+					Tablet="42"
+					Desktop="28"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="KeypadPlusLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="25"
+					Tablet="37"
+					Desktop="25"/>
+        </Setter>
+    </Style>
+
+    <!--Search Bar on Home Tabs-->
+    <Style x:Key="SearchImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="Margin" Value="10,0,0,0" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="15"
+				    Tablet="25"
+				    Desktop="15"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="15"
+				    Tablet="25"
+				    Desktop="15"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SettingsImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="Margin" Value="0,0,10,0" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="25"
+					Tablet="40"
+					Desktop="25"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="25"
+					Tablet="40"
+					Desktop="25"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SearchFrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="BorderColor" Value="#dddddd"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="45"
+				    Tablet="65"
+				    Desktop="45"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SearchEntryStyle" TargetType="Entry">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="PlaceholderColor" Value="#7e7e7e" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <!--Contacts Tab-->
+    <Style x:Key="ContatsNameLabelStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="18"
+				Tablet="27"
+				Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ContactsPhoneLabelStyle" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="15"
+				Tablet="22"
+				Desktop="15"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PhoneNameLabelStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="17.5"
+				Tablet="27"
+				Desktop="17.5"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PhoneNumberLabelStyle" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="14"
+				Tablet="21"
+				Desktop="14"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InnerPhoneLabelStyle" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="TextColor" Value="#f3872c" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="15"
+				Tablet="22"
+				Desktop="15"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ContactsBoxviewStyle" TargetType="BoxView">
+        <Setter Property="BackgroundColor" Value="#dee8e7"/>
+        <Setter Property="HeightRequest" Value="1"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+    </Style>
+
+    <Style x:Key="ContactsInnerImageStyle" TargetType="Image">
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="30"
+						Tablet="45"
+						Desktop="30"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="30"
+						Tablet="45"
+						Desktop="30"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ViewMoreButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+        <Setter Property="Margin" Value="0,5,0,0" />
+        <Setter Property="BackgroundColor" Value="#747474" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="14"
+				    Tablet="21"
+				    Desktop="14"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AddressBookViewMoreButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+        <Setter Property="Margin" Value="0,5,0,0" />
+        <Setter Property="BackgroundColor" Value="#747474" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="14"
+				    Tablet="21"
+				    Desktop="14"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="100"
+				    Tablet="150"
+				    Desktop="100"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PhoneBookAddButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="Margin" Value="0,5,0,0" />
+        <Setter Property="BackgroundColor" Value="#747474" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="13.5"
+				    Tablet="21"
+				    Desktop="13.5"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="55"
+				    Tablet="82.5"
+				    Desktop="55"/>
+        </Setter>
+    </Style>
+
+    <!--Header Layout-->
+    <Style x:Key="HeaderFirstStackStyle" TargetType="StackLayout">
+        <Setter Property="Grid.Row" Value="0"/>
+        <Setter Property="Grid.Column" Value="0"/>
+        <Setter Property="Margin" Value="10,0,0,0"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+    </Style>
+
+    <Style x:Key="HeaderSecondStackStyle" TargetType="StackLayout">
+        <Setter Property="Grid.Row" Value="0"/>
+        <Setter Property="Grid.Column" Value="1"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+    </Style>
+
+    <Style x:Key="HeaderThirdStackStyle" TargetType="StackLayout">
+        <Setter Property="Grid.Row" Value="0"/>
+        <Setter Property="Grid.Column" Value="2"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="End"/>
+        <Setter Property="Margin" Value="0,0,10,0"/>
+    </Style>
+
+    <Style x:Key="HeaderLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="22"
+						Tablet="37"
+						Desktop="22"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HeaderImageStyle" TargetType="Image">
+        <Setter Property="Margin" Value="3" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="25"
+						Tablet="37"
+						Desktop="25"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="25"
+						Tablet="37"
+						Desktop="25"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InvoiceNoteImageStyle" TargetType="Image">
+        <Setter Property="Margin" Value="3" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="20"
+						Tablet="30"
+						Desktop="20"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="20"
+						Tablet="30"
+						Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="EditAddressImageStyle" TargetType="Image">
+        <Setter Property="Margin" Value="3" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="50"
+						Tablet="75"
+						Desktop="50"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="50"
+						Tablet="75"
+						Desktop="50"/>
+        </Setter>
+    </Style>
+
+
+    <!--Message Tab-->
+    <Style x:Key="MessageToLabelStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="14"
+					Tablet="21"
+					Desktop="14"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CustomerNameLabelStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MessageCompanyLabelStyle" TargetType="Label">
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="14"
+					Tablet="21"
+					Desktop="14"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MessageFromLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="#f3872c" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="14"
+					Tablet="21"
+					Desktop="14"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MessageDateTimeLabelStyle" TargetType="Label">
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="14"
+					Tablet="21"
+					Desktop="14"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MessageBodyLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ExpanderHeaderLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ExpanderHeaderImageStyle" TargetType="Image">
+        <Setter Property="Source" Value="ic_new_right_arrow_xx.png" />
+        <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="30"
+					Tablet="45"
+					Desktop="30"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="30"
+					Tablet="45"
+					Desktop="30"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ExpanderHeaderStackStyle" TargetType="StackLayout">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="Margin">
+            <OnIdiom
+					x:TypeArguments="Thickness"
+					Phone="5"
+					Tablet="8"
+					Desktop="5"/>
+        </Setter>
+        <Setter Property="Padding">
+            <OnIdiom
+					x:TypeArguments="Thickness"
+					Phone="5"
+					Tablet="8"
+					Desktop="5"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ExpanderChildImageStyle" TargetType="Image">
+        <Setter Property="Source" Value="ic_blue_dot_xx.png" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="Margin" Value="0,0,8,0" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="10"
+					Tablet="15"
+					Desktop="10"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="10"
+					Tablet="15"
+					Desktop="10"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ExpanderChildLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="17"
+					Tablet="25"
+					Desktop="17"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ExpanderFrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BackgroundColor" Value="white" />
+    </Style>
+
+    <Style x:Key="ExpanderChildStackStyle" TargetType="StackLayout">
+        <Setter Property="Margin" Value="10,5,0,5"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+    </Style>
+
+    <Style x:Key="ExpanderBoxviewStyle" TargetType="BoxView">
+        <Setter Property="BackgroundColor" Value="#dee8e7"/>
+        <Setter Property="HeightRequest" Value="1"/>
+        <Setter Property="Margin" Value="10,0,10,0"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+    </Style>
+
+    <!--Mode page-->
+
+    <Style x:Key="ModeImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="300"
+					Tablet="450"
+					Desktop="300"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ModeTextLabel" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ModeSelectionImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="IsVisible" Value="false"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="30"
+					Tablet="45"
+					Desktop="30"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="30"
+					Tablet="45"
+					Desktop="30"/>
+        </Setter>
+    </Style>
+
+    <!--Message Settings Page-->
+
+    <Style x:Key="MessageHeaderTextStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="22"
+					Tablet="33"
+					Desktop="22"/>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="CallHeaderTextStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MessageNameTextStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="TextColor" Value="#1986fd" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MessageFrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="BorderColor" Value="#dddddd"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+        <!--<Setter Property="Margin" Value="3"/>-->
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="5,5,10,5"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=25, Tablet=30}" />
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="50"
+                    Tablet="75"
+                    Desktop="55"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AddressFrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="BorderColor" Value="#dddddd"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+        <!--<Setter Property="Margin" Value="3"/>-->
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="5,5,10,5"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=25, Tablet=30}" />
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+		        Phone="50"
+                Tablet="75"
+                Desktop="55"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="200"
+				Tablet="300"
+				Desktop="200"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SettingFrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="BorderColor" Value="#dddddd"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+    </Style>
+
+    <Style x:Key="CallFrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="BorderColor" Value="#e2e2e2"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+		        x:TypeArguments="x:Double"
+		        Phone="40"
+		        Tablet="60"
+		        Desktop="40"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MessageNumberTextStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="TextColor" Value="#f39849" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="15"
+				Tablet="22"
+				Desktop="15"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CallNumberTextStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="TextColor" Value="#aeaeae" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="15"
+					Tablet="22"
+					Desktop="15"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MessageDownArroweStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <!--Phone Popup Page-->
+    <Style x:Key="PopFrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=15, Tablet=30}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="600"
+					Tablet="900"
+					Desktop="600"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="350"
+					Tablet="525"
+					Desktop="350"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AccountsPopFrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=15, Tablet=30}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="600"
+					Tablet="900"
+					Desktop="600"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="350"
+					Tablet="525"
+					Desktop="350"/>
+        </Setter>
+        <Setter Property="BorderColor" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="VMContactNameLabelStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="18"
+				    Tablet="27"
+				    Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="VMContactsPhoneLabelStyle" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="18"
+				    Tablet="27"
+				    Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="VMInnerPhoneLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="TextColor" Value="#f3872c" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="18"
+				    Tablet="27"
+				    Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="VMContactsBoxviewStyle" TargetType="BoxView">
+        <Setter Property="BackgroundColor" Value="#dee8e7"/>
+        <Setter Property="HeightRequest" Value="1"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+    </Style>
+
+    <Style x:Key="VMContactsInnerImageStyle" TargetType="Image">
+        <Setter Property="Margin" Value="3" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="35"
+					Tablet="47"
+					Desktop="35"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="35"
+					Tablet="47"
+					Desktop="35"/>
+        </Setter>
+    </Style>
+
+    <!--Purchase Number Page-->
+    <Style x:Key="PurchaseFrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderColor" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="PurchaseLabelStyle" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="27"
+				    Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AlertButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BackgroundColor" Value="#f3872c" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="15"
+				    Tablet="22"
+				    Desktop="15"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="30"
+				    Tablet="45"
+				    Desktop="30"/>
+        </Setter>
+
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="100"
+				    Tablet="150"
+				    Desktop="100"/>
+        </Setter>
+    </Style>
+
+    <!--History Page-->
+    <Style x:Key="HistoryHeaderLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="18"
+				    Tablet="27"
+				    Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HistoryBoxviewStyle" TargetType="BoxView">
+        <Setter Property="Color" Value="Black"/>
+        <Setter Property="HeightRequest" Value="1"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+    </Style>
+
+    <Style x:Key="CallDateTimeLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="#bababa"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="14"
+					Tablet="21"
+					Desktop="14"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HistoryImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="50"
+					Tablet="75"
+					Desktop="50"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="50"
+					Tablet="75"
+					Desktop="50"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RecordPlayImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <!--Call History Page-->
+    <Style x:Key="CallHistoryImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="15"
+						Tablet="27"
+						Desktop="15"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="15"
+						Tablet="27"
+						Desktop="15"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CallHistoryDetails_ImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="30"
+					Tablet="45"
+					Desktop="30"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="30"
+					Tablet="45"
+					Desktop="30"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HistoryLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="#838383"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HistoryDetails_LabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="#838383"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CallPopFrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=15, Tablet=30}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="350"
+					Tablet="470"
+					Desktop="350"/>
+        </Setter>
+    </Style>
+
+    <!--Notes Page-->
+    <Style x:Key="NotesTextLabelStyle" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="EditTextLabelStyle" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="13"
+					Tablet="20"
+					Desktop="13"/>
+        </Setter>
+    </Style>
+
+    <!--My Number Page-->
+
+    <Style x:Key="MyNumberImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="35"
+					Tablet="57"
+					Desktop="35"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="35"
+					Tablet="57"
+					Desktop="35"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CloseImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="15"
+					Tablet="27"
+					Desktop="15"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="15"
+					Tablet="27"
+					Desktop="15"/>
+        </Setter>
+    </Style>
+
+    <!--Code Validation Page-->
+    <Style x:Key="CodeEntryStyle" TargetType="Entry">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="IsReadOnly" Value="False" />
+        <Setter Property="PlaceholderColor" Value="#7e7e7e" />
+        <Setter Property="MaxLength" Value="1" />
+        <Setter Property="Keyboard" Value="Numeric" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="Margin" Value="3" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="18"
+				    Tablet="27"
+				    Desktop="18"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="40"
+					Tablet="60"
+					Desktop="40"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+			    x:TypeArguments="x:Double"
+			    Phone="40"
+			    Tablet="60"
+			    Desktop="40"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="OrangeButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="BackgroundColor" Value="#f3872c" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="150"
+				    Tablet="175"
+				    Desktop="150"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+    </Style>
+
+    <!--Business Number Page-->
+    <Style x:Key="TypeLabelStyle" TargetType="Label">
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="StartCall_ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="BackgroundColor" Value="#f3872c" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="200"
+				    Tablet="300"
+				    Desktop="200"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Cancel_ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="#f3872c" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="200"
+				    Tablet="300"
+				    Desktop="200"/>
+        </Setter>
+    </Style>
+
+    <!--Profile Page-->
+    <Style x:Key="ProfileEntryStyle" TargetType="Entry">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="PlaceholderColor" Value="#7e7e7e" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <!--Assignee Page-->
+    <Style x:Key="CheckedImageStyle" TargetType="Image">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CalltypeLabelStyle" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <!--Invoice Page-->
+    <Style x:Key="InvoiceFrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="Margin" Value="10,5"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+    </Style>
+
+    <Style x:Key="CreateInvoice_ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="BackgroundColor" Value="#f3872c" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="55"
+				    Tablet="83"
+				    Desktop="55"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TermsDescriptionFrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="Margin" Value="10,5"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+    </Style>
+
+    <Style x:Key="InvoiceItemFrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <!--<Setter Property="Margin" Value="10,5"/>-->
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="0"/>
+        <!--<Setter Property="CornerRadius" Value="20"/>-->
+    </Style>
+
+    <Style x:Key="InvoiceLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="HorizontalOptions" Value="End"/>
+        <Setter Property="HorizontalTextAlignment" Value="End"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="16"
+						Tablet="24"
+						Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InvoiceNoLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="18"
+						Tablet="27"
+						Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InvoiceListNoLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="18"
+						Tablet="27"
+						Desktop="18"/>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="InvoiceUserLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="HorizontalOptions" Value="End"/>
+        <Setter Property="HorizontalTextAlignment" Value="End"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="MaxLines" Value="5"/>
+
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="16"
+						Tablet="24"
+						Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InvoiceEntryStyle" TargetType="Entry">
+        <Setter Property="BackgroundColor" Value="#e6e6e6"/>
+        <!--<Setter Property="PlaceholderColor" Value="Black"/>-->
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="40"
+					Tablet="60"
+					Desktop="40"/>
+        </Setter>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="QtyLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="18"
+						Tablet="27"
+						Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RateLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="18"
+						Tablet="27"
+						Desktop="18"/>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="QtyEntryStyle" TargetType="Entry">
+        <!--<Setter Property="Margin" Value="5,0,0,0"/>-->
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="BackgroundColor" Value="#efefef"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="65"
+					Tablet="97.5"
+					Desktop="65"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="40"
+					Tablet="60"
+					Desktop="40"/>
+        </Setter>
+        <Setter Property="FontSize">
+            <OnIdiom
+		            x:TypeArguments="x:Double"
+		            Phone="16"
+		            Tablet="24"
+		            Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RateEntryStyle" TargetType="Entry">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="BackgroundColor" Value="#e6e6e6"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="65"
+					Tablet="97.5"
+					Desktop="65"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="45"
+					Tablet="67.5"
+					Desktop="45"/>
+        </Setter>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="AmountEntryStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="Margin" Value="-2,0,0,0"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="65"
+					Tablet="97.5"
+					Desktop="65"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="45"
+					Tablet="67.5"
+					Desktop="45"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TaxLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="15"
+						Tablet="22.5"
+						Desktop="15"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InvoiceEditorStyle" TargetType="Editor">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="BackgroundColor" Value="#e6e6e6"/>
+        <Setter Property="PlaceholderColor" Value="Black"/>
+        <Setter Property="Margin" Value="0,0,0,5"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+        <!--<Setter Property="HeightRequest">
+                <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="225"
+					Tablet="375"
+					Desktop="250"/>
+            </Setter>-->
+    </Style>
+
+    <Style x:Key="InvoiceDescriptionStyle" TargetType="Editor">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="BackgroundColor" Value="#e6e6e6"/>
+        <Setter Property="PlaceholderColor" Value="Black"/>
+        <Setter Property="Margin" Value="0,0,0,5"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="100"
+					Tablet="150"
+					Desktop="100"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TCDescriptionStyle" TargetType="Editor">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="PlaceholderColor" Value="Black"/>
+        <Setter Property="Margin" Value="0,0,0,5"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+			    x:TypeArguments="x:Double"
+			    Phone="16"
+			    Tablet="24"
+			    Desktop="16"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="100"
+				Tablet="150"
+				Desktop="100"/>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="InvoiceStackStyle" TargetType="StackLayout">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="Orientation" Value="Vertical"/>
+    </Style>
+
+
+    <Style x:Key="InvoiceButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="BackgroundColor" Value="#f3872c" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InvoiceImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DatePickerStyle" TargetType="DatePicker">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="Format" Value="MM/dd/yyyy"/>
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="100"
+					Tablet="150"
+					Desktop="100"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="45"
+					Tablet="67.5"
+					Desktop="45"/>
+        </Setter>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="QuantityEntryStyle" TargetType="Entry">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="65"
+					Tablet="97.5"
+					Desktop="65"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="45"
+					Tablet="67.5"
+					Desktop="45"/>
+        </Setter>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="TaxEntryStyle" TargetType="Entry">
+        <!--<Setter Property="Margin" Value="5,0,0,0"/>-->
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="65"
+					Tablet="97.5"
+					Desktop="65"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="40"
+					Tablet="60"
+					Desktop="40"/>
+        </Setter>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TermsAndCondition_Label" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="18"
+						Tablet="27"
+						Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TermsAndConditionAlert_Label" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="14"
+						Tablet="21"
+						Desktop="14"/>
+        </Setter>
+    </Style>
+
+    <!--Business Info Page-->
+
+    <Style x:Key="BusinessEditorStyle" TargetType="Editor">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="PlaceholderColor" Value="#f3f3f3" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="BackgroundColor" Value="#e6e6e6"/>
+        <Setter Property="Margin" Value="0,0,0,5"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="130"
+					Tablet="105"
+					Desktop="70"/>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="BusinessButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <!--<Setter Property="FontAttributes" Value="Bold"/>-->
+        <Setter Property="Margin" Value="0,15,0,0"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="BackgroundColor" Value="#f3872c" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="50"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="170"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="BusinessLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="#f3872c"/>
+        <!--<Setter Property="FontAttributes" Value="Bold"/>-->
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="22"
+						Tablet="37"
+						Desktop="22"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="UserSearchFrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="VerticalOptions" Value="Start"/>
+        <Setter Property="BorderColor" Value="#dddddd"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="45"
+				    Tablet="65"
+				    Desktop="45"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InvoiceAmountsFrameStyle" TargetType="Frame">
+        <Setter Property="BorderColor" Value="#ededed"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+			    x:TypeArguments="x:Double"
+			    Phone="50"
+			    Tablet="75"
+			    Desktop="50"/>
+        </Setter>
+    </Style>
+
+
+
+    <!--Business Info Page-->
+
+    <Style x:Key="BusinessInfo_ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Start" />
+        <Setter Property="BackgroundColor" Value="#2772d8" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="140"
+				    Tablet="210"
+				    Desktop="140"/>
+        </Setter>
+    </Style>
+
+    <!--Select User Tab-->
+
+    <Style x:Key="UserNameLabelStyle" TargetType="Label">
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="16"
+				Tablet="24"
+				Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <!--List Invoice Page-->
+    <Style x:Key="InvoiceDetailsButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="Margin" Value="3" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="BackgroundColor" Value="#cbcbcb" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="120"
+				    Tablet="180"
+				    Desktop="120"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InvoiceDetailsAmountPaid_ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="#5ace69" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="BackgroundColor" Value="#d7f9e0" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="15.5"
+					Tablet="24"
+					Desktop="15.5"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="60"
+				    Tablet="90"
+				    Desktop="60"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="200"
+				    Tablet="300"
+				    Desktop="200"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InvoiceDetailsMakePayment_ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="BackgroundColor" Value="#f3872c" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="60"
+				    Tablet="90"
+				    Desktop="60"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InvoiceDetailsLabelStyle" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+
+    <!--Listing Invoice Audits-->
+
+    <Style x:Key="AuditLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="11"
+						Tablet="17"
+						Desktop="11"/>
+        </Setter>
+    </Style>
+
+    <!--Listing Invoice Notes-->
+
+    <Style x:Key="InvoiceNoteButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="160"
+				    Tablet="240"
+				    Desktop="160"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InvoiceNoteLabelStyle" TargetType="Label">
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InvoiceCanceNoteLabelStyle" TargetType="Label">
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="NoteEditorStyle" TargetType="Editor">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="NoteFrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        <Setter Property="BorderColor" Value="#dddddd"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+        <!--<Setter Property="Margin" Value="3"/>-->
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=5, Tablet=30}" />
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="60"
+				    Tablet="90"
+				    Desktop="60"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InvoiceCancelButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+    </Style>
+
+    <!--View Invoice-->
+
+    <Style x:Key="ViewInvoiceLabelStyle" TargetType="Label">
+        <!--<Setter Property="TextColor" Value="Black"/>-->
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="11"
+					Tablet="18"
+					Desktop="12"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="BoldViewInvoiceLabelStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <!--<Setter Property="TextColor" Value="Black"/>-->
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="11"
+					Tablet="18"
+					Desktop="12"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ViewInvoiceButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="BackgroundColor" Value="#f3872c" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="250"
+				    Tablet="375"
+				    Desktop="250"/>
+        </Setter>
+    </Style>
+
+    <!--View Request-->
+
+    <Style x:Key="RequestsLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="22"
+						Tablet="37"
+						Desktop="22"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequestFrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="BackgroundColor" Value="#e6e6e6" />
+        <Setter Property="BorderColor" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="HeaderFirstRowStyle" TargetType="StackLayout">
+        <Setter Property="Margin" Value="10,0,0,0"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+    </Style>
+
+    <Style x:Key="RequestHeaderImageStyle" TargetType="Image">
+        <Setter Property="Margin" Value="3" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="25"
+						Tablet="37"
+						Desktop="25"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="25"
+						Tablet="37"
+						Desktop="25"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HeaderSecondRowStyle" TargetType="StackLayout">
+        <Setter Property="Grid.Row" Value="0"/>
+        <Setter Property="Grid.Column" Value="1"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+    </Style>
+
+    <Style x:Key="RequestHeaderLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="22"
+						Tablet="37"
+						Desktop="22"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequestHeaderThirdStyle" TargetType="StackLayout">
+        <Setter Property="Grid.Row" Value="0"/>
+        <Setter Property="Grid.Column" Value="2"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="End"/>
+        <Setter Property="Margin" Value="0,0,10,0"/>
+    </Style>
+
+    <Style x:Key="RequestFrame" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="Margin" Value="10,5"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=15, Tablet=30}" />
+    </Style>
+
+    <Style x:Key="RequestSearchImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="Margin" Value="10,0,0,0" />
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="15"
+				    Tablet="25"
+				    Desktop="15"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="15"
+				    Tablet="25"
+				    Desktop="15"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequestSearchEntryStyle" TargetType="Entry">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="PlaceholderColor" Value="#7e7e7e" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequestImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequestListviewStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="17"
+				Tablet="26"
+				Desktop="17"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequestBoxviewStyle" TargetType="BoxView">
+        <Setter Property="BackgroundColor" Value="Black"/>
+        <Setter Property="WidthRequest" Value="1"/>
+        <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="60"
+					Tablet="120"
+					Desktop="60"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequestMessageLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="#bababa"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="IsVisible" Value="false"/>
+        <Setter Property="Text" Value="No Requests"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="20"
+						Tablet="30"
+						Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequesterButtonStyle" TargetType="Button">
+        <Setter Property="VerticalOptions" Value="Start"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="150"
+				    Tablet="225"
+				    Desktop="150"/>
+        </Setter>
+    </Style>
+
+    <!--Request Filter Popup Page-->
+
+    <Style x:Key="RequestFilter_ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="BackgroundColor" Value="#f3872c"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="50"
+				    Tablet="75"
+				    Desktop="50"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="100"
+				    Tablet="150"
+				    Desktop="100"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="FilterRequestTab_ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="BackgroundColor" Value="#cbcbcb" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="45"
+				    Tablet="68"
+				    Desktop="45"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="110"
+				    Tablet="165"
+				    Desktop="110"/>
+        </Setter>
+    </Style>
+
+    <!--Reveal Requeser Info-->
+    <Style x:Key="RequestPaymentEntryStyle" TargetType="Entry">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="45"
+					Tablet="65"
+					Desktop="45"/>
+        </Setter>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="15"
+					Tablet="23"
+					Desktop="15"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequestPaymentEditorStyle" TargetType="Editor">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="AutoSize" Value="TextChanges" />
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="15"
+					Tablet="23"
+					Desktop="15"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequestPaymentLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="16"
+						Tablet="24"
+						Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MakepaymentFrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="BorderColor" Value="#d8d8d8"/>
+        <Setter Property="Padding" Value="2"/>
+    </Style>
+
+    <Style x:Key="MakepaymentTextFrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="BorderColor" Value="#d8d8d8"/>
+        <Setter Property="Padding" Value="2"/>
+    </Style>
+
+    <Style x:Key="MakePaymentPage_ButtonStyle" TargetType="Button">
+        <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="BackgroundColor" Value="#f3872c"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="45"
+				    Tablet="70"
+				    Desktop="45"/>
+        </Setter>
+    </Style>
+
+    <!--New Card-->
+
+    <Style x:Key="AddNewCardFrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="BackgroundColor" Value="#e6e6e6" />
+        <Setter Property="BorderColor" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="NewCardFrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="Margin" Value="10,5"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+    </Style>
+
+    <Style x:Key="NewCardLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="16"
+						Tablet="24"
+						Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="NewCardEntryStyle" TargetType="Entry">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="PlaceholderColor" Value="#7e7e7e" />
+        <Setter Property="Keyboard" Value="Numeric" />
+        <Setter Property="ReturnType" Value="Next" />
+        <Setter Property="Margin" Value="0,5,0,0"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="45"
+				    Tablet="68"
+				    Desktop="45"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="NewCardButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="EndAndExpand" />
+        <Setter Property="BackgroundColor" Value="#f3872c" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="50"
+				    Tablet="75"
+				    Desktop="50"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SaveCardLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="18"
+						Tablet="27"
+						Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <!--Requester Info-->
+
+    <Style x:Key="RequesterEntryStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="TextColor" Value="#f3872c"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="18"
+				    Tablet="27"
+				    Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequesterLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="16"
+						Tablet="24"
+						Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequesterBoldLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="16"
+						Tablet="24"
+						Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequesterInfo_Cancel_ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BackgroundColor" Value="#cbcbcb" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="45"
+				    Tablet="70"
+				    Desktop="45"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="120"
+				    Tablet="180"
+				    Desktop="120"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequesterInfo_Send_ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BackgroundColor" Value="#f3872c" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="45"
+				    Tablet="70"
+				    Desktop="45"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="120"
+				    Tablet="180"
+				    Desktop="120"/>
+        </Setter>
+    </Style>
+
+    <!--Comments Page-->
+
+    <Style x:Key="Comment_ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="EndAndExpand" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="50"
+				    Tablet="75"
+				    Desktop="50"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CommentListviewStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="16"
+				Tablet="24"
+				Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CommentDateListviewStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="14"
+				Tablet="21"
+				Desktop="14"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CommentOptionLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="FontAttributes" Value="None"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,5,0,0"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="18"
+				Tablet="24"
+				Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CommentBoldListviewStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="18"
+				Tablet="27"
+				Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AddCommentFrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="BorderColor" Value="#dddddd"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+        <!--<Setter Property="Margin" Value="3"/>-->
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="60"
+				    Tablet="90"
+				    Desktop="60"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AddCommentEditorStyle" TargetType="Editor">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        <Setter Property="AutoSize" Value="TextChanges"/>
+        <Setter Property="PlaceholderColor" Value="#969696" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+        <!--<Setter Property="HeightRequest">
+                <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="50"
+					Tablet="100"
+					Desktop="50"/>
+            </Setter>-->
+    </Style>
+
+    <Style x:Key="CommentEntryStyle" TargetType="Entry">
+        <!--<Setter Property="HorizontalOptions" Value="FillAndExpand" />-->
+        <!--<Setter Property="PlaceholderColor" Value="#7e7e7e" />-->
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <!--Add Stripe-->
+
+    <Style x:Key="AddStripe_LabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="Margin" Value="0,5,0,0"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="18"
+						Tablet="27"
+						Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AddStripe_EntryStyle" TargetType="Entry">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <!--<Setter Property="PlaceholderColor" Value="#7e7e7e" />-->
+        <Setter Property="Keyboard" Value="Numeric" />
+        <Setter Property="ReturnType" Value="Next" />
+        <Setter Property="Margin" Value="0,5,0,0"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="45"
+				    Tablet="68"
+				    Desktop="45"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SetAccount_LabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="18"
+						Tablet="27"
+						Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AddStripe_ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="EndAndExpand" />
+        <Setter Property="BackgroundColor" Value="#f3872c" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="50"
+				    Tablet="75"
+				    Desktop="50"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AddStripe_FrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="BackgroundColor" Value="#e6e6e6" />
+        <Setter Property="BorderColor" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="Stripe_FrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        <Setter Property="Margin" Value="10,5"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+    </Style>
+
+    <!--List Stripe-->
+
+    <Style x:Key="ListStripe_FrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="BackgroundColor" Value="#e6e6e6" />
+        <Setter Property="BorderColor" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="List_Stripe_FrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="Margin" Value="10,5"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+    </Style>
+
+    <Style x:Key="StripeKey_LabelStyle" TargetType="Label">
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="14"
+				Tablet="21"
+				Desktop="14"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Stripe_LabelStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="16"
+				Tablet="24"
+				Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PrimaryAccount_ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="EndAndExpand" />
+        <Setter Property="BackgroundColor" Value="#f3872c" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="50"
+				    Tablet="75"
+				    Desktop="50"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AddStripe_ImageStyle" TargetType="Image">
+        <Setter Property="WidthRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="25"
+						Tablet="40"
+						Desktop="25"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="25"
+						Tablet="40"
+						Desktop="25"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Unchecked_ImageStyle" TargetType="Image">
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="20"
+				    Tablet="30"
+				    Desktop="20"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+				    Tablet="30"
+				    Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="StripeMessageLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="#bababa"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="20"
+						Tablet="30"
+						Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="StripeTitle_LabelStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="#f3872c" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="20"
+				Tablet="30"
+				Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Stripe_Title_LabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="#f3872c" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="20"
+				Tablet="30"
+				Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MessageLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="#bababa"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="IsVisible" Value="false"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="20"
+						Tablet="30"
+						Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <!--Subscription Page-->
+
+    <Style x:Key="SubscriptionLabelStyle" TargetType="Label">
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MonthlySubscriptionFrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=25, Tablet=30}" />
+        <Setter Property="Padding" Value="5,5,10,5" />
+        <!--<Setter Property="BorderColor" Value="#f3872c"/>-->
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="125"
+				    Tablet="188"
+				    Desktop="125"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SubscriptionFrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=30, Tablet=30}" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="Margin" Value="30,30,30,0" />
+        <Setter Property="BackgroundColor" Value="#e6e6e6" />
+    </Style>
+
+    <Style x:Key="SubscriptionHeaderTextStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SubscriptionButtonStyle" TargetType="Button">
+        <Setter Property="VerticalOptions" Value="End"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BackgroundColor" Value="#f3872c" />
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <!--<Setter Property="HeightRequest">
+                <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="44"
+				    Tablet="66"
+				    Desktop="44"/>
+            </Setter>-->
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="250"
+				    Tablet="300"
+				    Desktop="200"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SubLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Subscription_LabelStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Sub_LabelStyle" TargetType="Label">
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PriceLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="TextColor" Value="#f3872c" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SubscriptionFooterTextStyle" TargetType="Label">
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <!--My Subscription Page-->
+
+    <Style x:Key="MySubscription_FrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="BackgroundColor" Value="#e6e6e6" />
+    </Style>
+
+    <Style x:Key="My_Subscription_FrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="Margin" Value="10,5"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+    </Style>
+
+    <Style x:Key="MySubscriptionHeaderTextStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="TextColor" Value="#f3872c" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="22"
+					Tablet="33"
+					Desktop="22"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MySubscriptionTermTextStyle" TargetType="Label">
+        <!--<Setter Property="HorizontalOptions" Value="StartAndExpand" />-->
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="#f3872c" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MySubscription_LabelStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="My_Subscription_LabelStyle" TargetType="Label">
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Bullet_LabelStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="25"
+					Tablet="38"
+					Desktop="25"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Active_LabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="#f3872c" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MySubscription_ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="EndAndExpand" />
+        <Setter Property="BackgroundColor" Value="#f3872c" />
+        <Setter Property="TextTransform" Value="None"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="50"
+				    Tablet="75"
+				    Desktop="50"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="250"
+				    Tablet="300"
+				    Desktop="200"/>
+        </Setter>
+    </Style>
+
+    <!--Create Request-->
+
+    <Style x:Key="CreateRequest_Editor_FrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="BorderColor" Value="#74716f"/>
+        <!--<Setter Property="BackgroundColor" Value="White"/>-->
+        <!--<Setter Property="Margin" Value="3"/>-->
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="CornerRadius" Value="0"/>
+    </Style>
+
+    <Style x:Key="CreateRequest_Category_FrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="BorderColor" Value="#74716f"/>
+        <!--<Setter Property="BackgroundColor" Value="White"/>-->
+        <!--<Setter Property="Margin" Value="3"/>-->
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="40"
+					Tablet="60"
+					Desktop="40"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CreateRequest_EditorStyle" TargetType="Editor">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="TextColor" Value="Black" />
+        <!--<Setter Property="Margin" Value="0,0,0,5"/>-->
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+        <Setter Property="MaximumHeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="100"
+					Tablet="150"
+					Desktop="100"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CreateRequest_EntryStyle" TargetType="Entry">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="PlaceholderColor" Value="#7e7e7e" />
+        <Setter Property="ReturnType" Value="Next" />
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequestFile_FrameStyle" TargetType="Frame">
+        <Setter Property="VerticalOptions" Value="Start"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+        <!--<Setter Property="FontSize">
+                <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+            </Setter>-->
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="150"
+				    Tablet="225"
+				    Desktop="150"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CreateRequestImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="180"
+					Tablet="375"
+					Desktop="250"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="60"
+					Tablet="90"
+					Desktop="60"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="FileCount_LabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <!--<Setter Property="Margin" Value="0,5,0,0"/>-->
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="16"
+						Tablet="24"
+						Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CreateRequest_Outer_FrameStyle" TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="BackgroundColor" Value="#e6e6e6" />
+        <Setter Property="BorderColor" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="CreateRequest_Inner_FrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        <Setter Property="Margin" Value="10,5"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+    </Style>
+
+    <Style x:Key="CreateRequest_LabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <!--<Setter Property="Margin" Value="0,5,0,0"/>-->
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="18"
+						Tablet="27"
+						Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="15"
+					Tablet="23"
+					Desktop="15"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="15"
+					Tablet="23"
+					Desktop="15"/>
+        </Setter>
+    </Style>
+
+
+    <!--CreateRequestCategoryPage-->
+
+    <Style x:Key="CreateRequest_Category_Header_LabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="18"
+						Tablet="27"
+						Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CreateRequest_Category_LabelStyle" TargetType="Label">
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="16"
+				Tablet="24"
+				Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RemoveButtonStyle" TargetType="Button">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="BackgroundColor" Value="#efefef"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="TextColor" Value="#fd4d4d"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="30"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="150"
+				    Tablet="225"
+				    Desktop="150"/>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="ChooseFile_FrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="BorderColor" Value="#d8d8d8"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="35"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="175"
+				    Tablet="225"
+				    Desktop="150"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ChooseAttachment_ImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="Start"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="75"
+					Tablet="375"
+					Desktop="250"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="25"
+					Tablet="90"
+					Desktop="60"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ChooseFile_LabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <!--<Setter Property="Margin" Value="0,5,0,0"/>-->
+        <Setter Property="FontSize">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="16"
+						Tablet="24"
+						Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <!--TermsAndConditionsPopupPage-->
+
+
+    <Style x:Key="TermsAndConditions_ButtonStyle" TargetType="Button">
+        <Setter Property="VerticalOptions" Value="Start"/>
+        <Setter Property="BorderColor" Value="#f3872c"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="150"
+				    Tablet="225"
+				    Desktop="150"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TermsAndConditions_LabelStyle" TargetType="Label">
+        <Setter Property="FontSize">
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="18"
+				Tablet="27"
+				Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LocationPopup_ButtonStyle" TargetType="Button">
+        <Setter Property="VerticalOptions" Value="Start"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="45"
+				    Tablet="68"
+				    Desktop="45"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="150"
+				    Tablet="225"
+				    Desktop="150"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TCFrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="BorderColor" Value="#dddddd"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="8"/>
+        <!--<Setter Property="BorderColor" Value="Transparent"/>-->
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=15, Tablet=30}" />
+    </Style>
+
+    <Style x:Key="TC_EditorStyle" TargetType="Editor">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="BackgroundColor" Value="#e6e6e6"/>
+        <Setter Property="Margin" Value="0,0,0,5"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="16"
+				    Tablet="24"
+				    Desktop="16"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="100"
+					Tablet="150"
+					Desktop="100"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="NewUserButtonStyle" TargetType="Button">
+        <Setter Property="VerticalOptions" Value="Start"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="200"
+				    Tablet="300"
+				    Desktop="200"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ApprovalButtonStyle" TargetType="Button">
+        <Setter Property="VerticalOptions" Value="Start"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=40}" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="14"
+					Tablet="21"
+					Desktop="14"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="180"
+				    Tablet="270"
+				    Desktop="180"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CommentBoxviewStyle" TargetType="BoxView">
+        <Setter Property="Color" Value="#f3872c"/>
+        <Setter Property="HeightRequest" Value="2.5"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+    </Style>
+
+    <Style x:Key="TCEntryStyle" TargetType="Entry">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="PlaceholderColor" Value="#7e7e7e" />
+        <!--<Setter Property="TextColor" Value="Black" />-->
+        <Setter Property="FontSize">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="18"
+				    Tablet="27"
+				    Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AddFilter_ImageStyle" TargetType="Image">
+        <Setter Property="Margin" Value="0,0,-5,0"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="25"
+						Tablet="40"
+						Desktop="25"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="25"
+						Tablet="40"
+						Desktop="25"/>
+        </Setter>
+    </Style>
+
+    <!--TwilioInstructionPage-->
+
+    <Style x:Key="InstructionLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InstructionLinkLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="Margin" Value="0,5,0,0"/>
+        <Setter Property="TextColor" Value="blue"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="18"
+					Tablet="27"
+					Desktop="18"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CallSupport_FrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="#f3872c"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <!--<Setter Property="HorizontalOptions" Value="CenterAndExpand"/>-->
+        <Setter Property="BorderColor" Value="#d8d8d8"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+        <Setter Property="Margin" Value="25,10"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="50"
+				    Tablet="75"
+				    Desktop="50"/>
+        </Setter>
+    </Style>
+
+    <!--Invite User Page-->
+
+    <Style x:Key="InviteUserLabel" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MessagesFrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="IsClippedToBounds" Value="True"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="45"
+				    Tablet="70"
+				    Desktop="45"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ChooseMessageType_FrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="#c3c3c3"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="BorderColor" Value="#c3c3c3"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="60"
+				    Tablet="90"
+				    Desktop="60"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="115"
+				    Tablet="180"
+				    Desktop="115"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="EmailType_FrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="#c3c3c3"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="45"
+				    Tablet="70"
+				    Desktop="45"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="160"
+				    Tablet="210"
+				    Desktop="160"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MessageType_FrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="#c3c3c3"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="BorderColor" Value="#c3c3c3"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="60"
+				    Tablet="90"
+				    Desktop="60"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="140"
+				    Tablet="210"
+				    Desktop="140"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MessagesTextStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="14"
+					Tablet="21"
+					Desktop="14"/>
+        </Setter>
+    </Style>
+
+    <!--AccountUsersPage-->
+
+    <Style x:Key="CallHistoryFrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="#c3c3c3"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+			    x:TypeArguments="x:Double"
+			    Phone="40"
+			    Tablet="75"
+			    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+		    x:TypeArguments="x:Double"
+		    Phone="100"
+		    Tablet="150"
+		    Desktop="100"/>
+        </Setter>
+        <Setter Property="BorderColor" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="AccountUsers_FrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="#c3c3c3"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="75"
+				    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="270"
+				    Tablet="405"
+				    Desktop="270"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AccountUsers_TextStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Account_FrameStyle" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="IsClippedToBounds" Value="True"/>
+        <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+        <Setter Property="BorderColor" Value="#dddddd"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="40"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+    </Style>
+
+    <!--SendEmailPage-->
+
+    <Style x:Key="SendEmailStyle" TargetType="Entry">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="40"
+					Tablet="60"
+					Desktop="40"/>
+        </Setter>
+        <Setter Property="FontSize">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="16"
+					Tablet="24"
+					Desktop="16"/>
+        </Setter>
+    </Style>
+
+    <!--Location Page-->
+
+    <Style x:Key="RequestCount_FrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="#f2f2f2"/>
+        <Setter Property="HasShadow" Value="False"/>
+        <Setter Property="IsClippedToBounds" Value="True"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="BorderColor" Value="#d8d8d8"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+        <Setter Property="HeightRequest">
+            <OnIdiom
+				    x:TypeArguments="x:Double"
+				    Phone="35"
+				    Tablet="60"
+				    Desktop="40"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RequestListing_ImageStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="20"
+					Tablet="30"
+					Desktop="20"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Tab_FrameStyle" TargetType="Frame">
+        <!--<Setter Property="BackgroundColor" Value="White"/>-->
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <!--<Setter Property="BorderColor" Value="#d8d8d8"/>-->
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="HeightRequest">
+            <OnIdiom
+			    x:TypeArguments="x:Double"
+			    Phone="45"
+			    Tablet="68"
+			    Desktop="45"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+			    x:TypeArguments="x:Double"
+			    Phone="110"
+			    Tablet="165"
+			    Desktop="150"/>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InvoiceTab_FrameStyle" TargetType="Frame">
+        <!--<Setter Property="BackgroundColor" Value="White"/>-->
+        <Setter Property="HasShadow" Value="false"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="CornerRadius" Value="{OnIdiom Phone=20, Tablet=30}" />
+        <Setter Property="HeightRequest">
+            <OnIdiom
+		    x:TypeArguments="x:Double"
+		    Phone="40"
+		    Tablet="60"
+		    Desktop="40"/>
+        </Setter>
+        <Setter Property="WidthRequest">
+            <OnIdiom
+		    x:TypeArguments="x:Double"
+		    Phone="120"
+		    Tablet="180"
+		    Desktop="120"/>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ActivityIndicator">
+        <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+    </Style>
+
+    <Style TargetType="IndicatorView">
+        <Setter Property="IndicatorColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}"/>
+        <Setter Property="SelectedIndicatorColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray100}}"/>
+    </Style>
+
+    <Style TargetType="Border">
+        <Setter Property="Stroke" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />
+        <Setter Property="StrokeShape" Value="Rectangle"/>
+        <Setter Property="StrokeThickness" Value="1"/>
+    </Style>
+
+    <Style TargetType="BoxView">
+        <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Primary}}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Padding" Value="14,10"/>
+        <Setter Property="MinimumHeightRequest" Value="44"/>
+        <Setter Property="MinimumWidthRequest" Value="44"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
+                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray600}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="CheckBox">
+        <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+        <Setter Property="MinimumHeightRequest" Value="44"/>
+        <Setter Property="MinimumWidthRequest" Value="44"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="DatePicker">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="MinimumHeightRequest" Value="44"/>
+        <Setter Property="MinimumWidthRequest" Value="44"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Editor">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />
+        <Setter Property="MinimumHeightRequest" Value="44"/>
+        <Setter Property="MinimumWidthRequest" Value="44"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Entry">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />
+        <Setter Property="MinimumHeightRequest" Value="44"/>
+        <Setter Property="MinimumWidthRequest" Value="44"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
+        <Setter Property="CornerRadius" Value="8" />
+    </Style>
+
+    <Style TargetType="ImageButton">
+        <Setter Property="Opacity" Value="1" />
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="BorderWidth" Value="0"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="MinimumHeightRequest" Value="44"/>
+        <Setter Property="MinimumWidthRequest" Value="44"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="Opacity" Value="0.5" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ListView">
+        <Setter Property="SeparatorColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />
+        <Setter Property="RefreshControlColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />
+    </Style>
+
+    <Style TargetType="Picker">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
+        <Setter Property="TitleColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="MinimumHeightRequest" Value="44"/>
+        <Setter Property="MinimumWidthRequest" Value="44"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                            <Setter Property="TitleColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ProgressBar">
+        <Setter Property="ProgressColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="ProgressColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="RadioButton">
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="MinimumHeightRequest" Value="44"/>
+        <Setter Property="MinimumWidthRequest" Value="44"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="RefreshView">
+        <Setter Property="RefreshColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />
+    </Style>
+
+    <Style TargetType="SearchBar">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
+        <Setter Property="PlaceholderColor" Value="{StaticResource Gray500}" />
+        <Setter Property="CancelButtonColor" Value="{StaticResource Gray500}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="MinimumHeightRequest" Value="44"/>
+        <Setter Property="MinimumWidthRequest" Value="44"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                            <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="SearchHandler">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
+        <Setter Property="PlaceholderColor" Value="{StaticResource Gray500}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                            <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Shadow">
+        <Setter Property="Radius" Value="15" />
+        <Setter Property="Opacity" Value="0.5" />
+        <Setter Property="Brush" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
+        <Setter Property="Offset" Value="10,10" />
+    </Style>
+
+    <Style TargetType="Slider">
+        <Setter Property="MinimumTrackColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+        <Setter Property="MaximumTrackColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray600}}" />
+        <Setter Property="ThumbColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="MinimumTrackColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}"/>
+                            <Setter Property="MaximumTrackColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}"/>
+                            <Setter Property="ThumbColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="SwipeItem">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+    </Style>
+
+    <Style TargetType="Switch">
+        <Setter Property="OnColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+        <Setter Property="ThumbColor" Value="{StaticResource White}" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="OnColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                            <Setter Property="ThumbColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="On">
+                        <VisualState.Setters>
+                            <Setter Property="OnColor" Value="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Gray200}}" />
+                            <Setter Property="ThumbColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Off">
+                        <VisualState.Setters>
+                            <Setter Property="ThumbColor" Value="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="TimePicker">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="MinimumHeightRequest" Value="44"/>
+        <Setter Property="MinimumWidthRequest" Value="44"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Page" ApplyToDerivedTypes="True">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+    </Style>
+
+    <Style TargetType="Shell" ApplyToDerivedTypes="True">
+        <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray950}}" />
+        <Setter Property="Shell.ForegroundColor" Value="{OnPlatform WinUI={StaticResource Primary}, Default={StaticResource White}}" />
+        <Setter Property="Shell.TitleColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
+        <Setter Property="Shell.DisabledColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
+        <Setter Property="Shell.UnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray200}}" />
+        <Setter Property="Shell.NavBarHasShadow" Value="False" />
+        <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+        <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+        <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+        <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />
+    </Style>
+
+    <Style TargetType="NavigationPage">
+        <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray950}}" />
+        <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource White}}" />
+        <Setter Property="IconColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource White}}" />
+    </Style>
+
+    <Style TargetType="TabbedPage">
+        <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}" />
+        <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+        <Setter Property="UnselectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
+        <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
+    </Style>
+
+</ResourceDictionary>

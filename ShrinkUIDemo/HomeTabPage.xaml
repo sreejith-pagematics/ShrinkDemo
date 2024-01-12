@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    BackgroundColor="#e6e6e6"
+    x:Class="ListPM_Caller.Views.HomeTab.HomeTabPage">
+
+    <Frame 
+        Style="{StaticResource HomeTabFrameStyle}">
+
+        <Grid
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*" />
+                <RowDefinition Height="84*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+
+            <Frame
+            Grid.Row="1"
+            Style="{StaticResource InnerFrameStyle}"
+            x:Name="home_layout">
+
+                <ListView   
+                    x:Name="homelistview"
+                    HasUnevenRows="True"
+                    SeparatorColor="#cecece"
+                    SelectionMode="None"
+                    Margin="10"
+                    ItemTapped="HomeOptionsTapped"
+                    SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Border
+                                        Stroke="#bdbdbd"
+                                        StrokeThickness="1"
+                                        Padding="8"
+                                        Margin="5"
+                                        BackgroundColor="{Binding BGColor}">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="40" />
+                                        </Border.StrokeShape>
+
+                                        <StackLayout 
+                                            VerticalOptions="FillAndExpand"
+                                            Margin="5,0,5,0"
+                                            Orientation="Horizontal">
+
+                                            <Label 
+                                                Text="{Binding Title}"
+                                                HorizontalOptions="StartAndExpand"
+                                                VerticalOptions="CenterAndExpand"
+                                                TextColor="{Binding TextColor}">
+                                                <Label.FontSize>
+                                                    <OnIdiom x:TypeArguments="x:Double">
+                                                        <OnIdiom.Phone>18</OnIdiom.Phone>
+                                                        <OnIdiom.Tablet>27</OnIdiom.Tablet>
+                                                        <OnIdiom.Desktop>18</OnIdiom.Desktop>
+                                                    </OnIdiom>
+                                                </Label.FontSize>
+                                            </Label>
+
+                                            <Image 
+                                                Source="{Binding ImageSource}"
+                                                VerticalOptions="CenterAndExpand"
+                                                HorizontalOptions="Start">
+                                                <Image.WidthRequest>
+                                                    <OnIdiom x:TypeArguments="x:Double">
+                                                        <OnIdiom.Phone>18</OnIdiom.Phone>
+                                                        <OnIdiom.Tablet>27</OnIdiom.Tablet>
+                                                        <OnIdiom.Desktop>18</OnIdiom.Desktop>
+                                                    </OnIdiom>
+                                                </Image.WidthRequest>
+                                                <Image.HeightRequest>
+                                                    <OnIdiom x:TypeArguments="x:Double">
+                                                        <OnIdiom.Phone>18</OnIdiom.Phone>
+                                                        <OnIdiom.Tablet>27</OnIdiom.Tablet>
+                                                        <OnIdiom.Desktop>18</OnIdiom.Desktop>
+                                                    </OnIdiom>
+                                                </Image.HeightRequest>
+                                            </Image>
+                                        </StackLayout>
+                                        <Border.HeightRequest>
+                                            <OnIdiom x:TypeArguments="x:Double">
+                                                <OnIdiom.Phone>50</OnIdiom.Phone>
+                                                <OnIdiom.Tablet>75</OnIdiom.Tablet>
+                                                <OnIdiom.Desktop>50</OnIdiom.Desktop>
+                                            </OnIdiom>
+                                        </Border.HeightRequest>
+                                    </Border>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.Footer>
+                        <Label/>
+                    </ListView.Footer>
+                </ListView>
+            </Frame>
+
+            <Grid
+            Grid.Row="2"
+            Margin="5"
+            x:Name="footer_layout"
+            VerticalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="19*" />
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="21*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout
+                Grid.Column="0"
+                VerticalOptions="CenterAndExpand"
+                Orientation="Vertical">
+
+                    <Image 
+                    Style="{StaticResource FooterImageStyle}"
+                    Source="ic_home_black_xx.png"/>
+
+                    <Label 
+                    TextColor="Black"
+                    Text="Tab1"
+                    Style="{StaticResource FooterLabelStyle}"/>
+                </StackLayout>
+
+                <StackLayout
+                Grid.Column="1"
+                VerticalOptions="CenterAndExpand"
+                Orientation="Vertical">
+
+                    <Image 
+                    Style="{StaticResource FooterImageStyle}"
+                    Source="ic_keypad_gray_xx.png"/>
+
+                    <Label 
+                    TextColor="#838383"
+                    Text="Tab2"
+                    Style="{StaticResource FooterLabelStyle}"/>
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Tapped="ShowKeypad"
+                        NumberOfTapsRequired="1">
+                        </TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout
+                Grid.Column="2"
+                VerticalOptions="CenterAndExpand"
+                Orientation="Vertical">
+
+                    <Image 
+                    Style="{StaticResource FooterImageStyle}"
+                    Source="ic_history_gray_xx.png"/>
+
+                    <Label 
+                    TextColor="#838383"
+                    Text="Tab3"
+                    Style="{StaticResource FooterLabelStyle}"/>
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Tapped="ShowHistory"
+                        NumberOfTapsRequired="1">
+                        </TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout
+                Grid.Column="3"
+                VerticalOptions="CenterAndExpand"
+                Orientation="Vertical">
+
+                    <Image 
+                    Style="{StaticResource FooterImageStyle}"
+                    Source="ic_contacts_gray_xx.png"/>
+
+                    <Label 
+                    TextColor="#838383"
+                    Text="Tab4"
+                    Style="{StaticResource FooterLabelStyle}"/>
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Tapped="ShowContacts"
+                        NumberOfTapsRequired="1">
+                        </TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout
+                Grid.Column="4"
+                VerticalOptions="CenterAndExpand"
+                Orientation="Vertical">
+
+                    <Image 
+                    Style="{StaticResource FooterImageStyle}"
+                    Source="ic_request_gray_xx.png"/>
+
+                    <Label 
+                    TextColor="#838383"
+                    Text="Tab5"
+                    Style="{StaticResource FooterLabelStyle}"/>
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Tapped="ShowMessages"
+                        NumberOfTapsRequired="1">
+                        </TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <Grid.HeightRequest>
+                    <OnIdiom x:TypeArguments="x:Double">
+                        <OnIdiom.Phone>120</OnIdiom.Phone>
+                        <OnIdiom.Tablet>180</OnIdiom.Tablet>
+                        <OnIdiom.Desktop>120</OnIdiom.Desktop>
+                    </OnIdiom>
+                </Grid.HeightRequest>
+            </Grid>
+        </Grid>
+    </Frame>
+</ContentView>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit" 
+    BackgroundColor="#e6e6e6"
+    x:Class="ListPMCaller.Views.Requests.CreateRequestPage">
+
+    <Frame 
+        x:Name="create_request_outer_frame"
+        Style="{StaticResource CreateRequest_Outer_FrameStyle}">
+
+        <StackLayout
+            Orientation="Vertical"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="{OnIdiom Phone=50, Tablet=75, Desktop=50}" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout 
+                    Grid.Column="0"
+                    Style="{StaticResource HeaderFirstRowStyle}">
+
+                    <Image 
+                        Style="{StaticResource RequestHeaderImageStyle}" 
+                        Source="ic_back_arrow_xx.png"/>
+
+                </StackLayout>
+
+                <StackLayout 
+                    Grid.Column="1"
+                    Style="{StaticResource HeaderSecondRowStyle}">
+
+                    <Label 
+                        Text="New Page"
+                        Style="{StaticResource RequestHeaderLabelStyle}" />
+
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource RequestHeaderThirdStyle}"/>
+            </Grid>
+
+            <Frame 
+                x:Name="createrequest_inner_frame"
+                Style="{StaticResource CreateRequest_Inner_FrameStyle}">
+
+            </Frame>
+        </StackLayout>
+    </Frame>
+</ContentPage>

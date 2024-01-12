@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage  
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    BackgroundColor="#e6e6e6"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Class="ListPMCallerBee.Views.Requests.CommentsPage">
+
+    <Grid
+        VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="94*" />
+        </Grid.RowDefinitions>
+
+        <Grid 
+            Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="8*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout 
+                Grid.Column="0"
+                Style="{StaticResource HeaderFirstRowStyle}">
+
+                <Image 
+                    Style="{StaticResource RequestHeaderImageStyle}" 
+                    Source="ic_back_arrow_xx.png"/>
+
+
+            </StackLayout>
+
+            <StackLayout 
+                Grid.Column="1"
+                Style="{StaticResource HeaderSecondRowStyle}">
+
+                <Label 
+                    x:Name="requestheader_label"
+                    Style="{StaticResource RequestHeaderLabelStyle}" />
+
+            </StackLayout>
+
+            <StackLayout 
+                Grid.Column="2"
+                Style="{StaticResource HeaderThirdStackStyle}">
+                <Image 
+                    x:Name="cancel_image"
+                    IsVisible="false"
+                    Margin="3"
+                    Source="ic_delete_orange_xx.png">
+                    <Image.HeightRequest>
+                        <OnIdiom x:TypeArguments="x:Double">
+                            <OnIdiom.Phone>30</OnIdiom.Phone>
+                            <OnIdiom.Tablet>45</OnIdiom.Tablet>
+                            <OnIdiom.Desktop>30</OnIdiom.Desktop>
+                        </OnIdiom>
+                    </Image.HeightRequest>
+                    <Image.WidthRequest>
+                        <OnIdiom x:TypeArguments="x:Double">
+                            <OnIdiom.Phone>30</OnIdiom.Phone>
+                            <OnIdiom.Tablet>45</OnIdiom.Tablet>
+                            <OnIdiom.Desktop>30</OnIdiom.Desktop>
+                        </OnIdiom>
+                    </Image.WidthRequest>
+                </Image>
+            </StackLayout>
+
+        </Grid>
+
+        <Frame
+            Grid.Row="1"
+            VerticalOptions="FillAndExpand"
+            Style="{StaticResource RequestFrame}"
+            x:Name="commentlistviewframe">
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="8*" />
+                    <RowDefinition Height="92*" />
+                </Grid.RowDefinitions>
+
+                <Frame
+                    Grid.Row="0"
+                    CornerRadius="{OnIdiom Phone=20, Tablet=30}"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    HasShadow="False"
+                    IsClippedToBounds="True"
+                    Margin="5,0"
+                    Padding="5">
+
+                    <Grid
+                        x:Name="toplayout_grid"
+                        HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="53*" />
+                            <ColumnDefinition Width="47*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Frame
+                            x:Name="details_frame"
+                            TranslationX="18"
+                            Grid.Column="0"
+                            ZIndex="10"
+                            CornerRadius="{OnIdiom Phone=20, Tablet=30}"
+                            Padding="0"
+                            HasShadow="False"
+                            BorderColor="Transparent">
+
+                            <Label
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"
+                                Text="Details"
+                                TextColor="White">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>18</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>27</OnIdiom.Tablet>
+                                        <OnIdiom.Desktop>18</OnIdiom.Desktop>
+                                    </OnIdiom>
+                                </Label.FontSize>
+                            </Label>
+                        </Frame>
+
+                        <Frame
+                            x:Name="comment_frame"
+                            TranslationX="-18"
+                            HasShadow="False"
+                            ZIndex="5"
+                            Padding="0"
+                            Grid.Column="1"
+                            BorderColor="Transparent"
+                            CornerRadius="{OnIdiom Phone=20, Tablet=30}">
+
+                            <Label
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"
+                                x:Name="tabtext_label"
+                                TextColor="White">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>18</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>27</OnIdiom.Tablet>
+                                        <OnIdiom.Desktop>18</OnIdiom.Desktop>
+                                    </OnIdiom>
+                                </Label.FontSize>
+                            </Label>
+                        </Frame>
+                    </Grid>
+                    <Frame.HeightRequest>
+                        <OnIdiom x:TypeArguments="x:Double">
+                            <OnIdiom.Phone>50</OnIdiom.Phone>
+                            <OnIdiom.Tablet>75</OnIdiom.Tablet>
+                            <OnIdiom.Desktop>50</OnIdiom.Desktop>
+                        </OnIdiom>
+                    </Frame.HeightRequest>
+                </Frame>
+
+                <Grid
+                    Grid.Row="1"
+                    VerticalOptions="StartAndExpand"
+                    x:Name="comments_stack">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8*" />
+                        <RowDefinition Height="92*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid
+                        Grid.Row="0"
+                        x:Name="alltabs_layout"
+                        Margin="10,5,10,0"
+                        VerticalOptions="CenterAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="33*" />
+                            <ColumnDefinition Width="34*" />
+                            <ColumnDefinition Width="33*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout
+                            x:Name="customer_stack"
+                            Grid.Column="0"
+                            HorizontalOptions="FillAndExpand"
+                            Margin="2,0"
+                            VerticalOptions="FillAndExpand"
+                            Orientation="Vertical">
+
+                            <Label 
+                                x:Name="customer_label"
+                                Text="Tab1"
+                                FontAttributes="Bold"
+                                Style="{StaticResource HistoryHeaderLabelStyle}"/>
+
+                            <BoxView
+                                x:Name="customer_boxview"
+                                Margin="-3,0,-3,0"
+                                Style="{StaticResource CommentBoxviewStyle}"/>
+
+                        </StackLayout>
+
+                        <StackLayout
+                            x:Name="shared_stack"
+                            Grid.Column="1"
+                            HorizontalOptions="FillAndExpand"
+                                Margin="2,0" 
+                            VerticalOptions="FillAndExpand"
+                            Orientation="Vertical">
+
+                            <Label 
+                                x:Name="shared_label"
+                                IsEnabled="False"
+                                Text="Tab2"
+                                TextColor="#bdbdbd"
+                                Style="{StaticResource HistoryHeaderLabelStyle}"/>
+
+                            <BoxView
+                                Margin="-3,0,-3,0"
+                                IsEnabled="False"
+                                x:Name="shared_boxview"
+                                Color="#bdbdbd"
+                                Style="{StaticResource CommentBoxviewStyle}"/>
+
+                        </StackLayout>
+
+                        <StackLayout
+                            x:Name="support_stack"
+                            Grid.Column="2"
+                            HorizontalOptions="FillAndExpand"
+                                Margin="2,0"
+                            VerticalOptions="FillAndExpand"
+                            Orientation="Vertical">
+
+                            <Label 
+                                x:Name="support_label"
+                                IsEnabled="False"
+                                Text="Tab3"
+                                TextColor="#bdbdbd"
+                                Style="{StaticResource HistoryHeaderLabelStyle}"/>
+
+                            <BoxView
+                                Margin="-3,0,-3,0"
+                                IsEnabled="False"
+                                x:Name="support_boxview"
+                                Color="#bdbdbd"
+                                Style="{StaticResource CommentBoxviewStyle}"/>
+
+                        </StackLayout>
+                    </Grid>
+
+                    <StackLayout
+                        Grid.Row="1"
+                        VerticalOptions="FillAndExpand"
+                        Orientation="Vertical">
+
+                        <AbsoluteLayout 
+                            VerticalOptions="FillAndExpand">
+                            <ListView
+                                IsPullToRefreshEnabled="True"
+                                RefreshCommand="{Binding RefreshComments}"
+                                IsRefreshing="{Binding IsRefreshing}"
+                                AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                x:Name="commentlistview"
+                                VerticalOptions="FillAndExpand"
+                                Margin="2,0"
+                                SeparatorColor="#cecece"
+                                SelectionMode="None"
+                                HasUnevenRows="True">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout 
+                                                VerticalOptions="FillAndExpand"
+                                                HorizontalOptions="FillAndExpand" 
+                                                Margin="15,10"
+                                                Orientation="Vertical">
+
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label 
+                                                        Text="{Binding commenterName, Converter={StaticResource specialCharactorConverter}}"
+                                                        TextColor="{Binding parentComment.supportItemComments.TextColor}"
+                                                        Style="{StaticResource CommentBoldListviewStyle}"/>
+                                                </StackLayout>
+
+                                                <Label
+                                                    Text="{Binding parentComment.supportItemComments.comment, Converter={StaticResource specialCharactorConverter}}"
+                                                    TextColor="{Binding parentComment.supportItemComments.TextColor}"
+                                                    BackgroundColor="{Binding parentComment.supportItemComments.CommentBGColor}"
+                                                    Style="{StaticResource CommentListviewStyle}"/>
+
+                                                <StackLayout IsVisible="{Binding parentComment.supportItemComments.isImageFile}">
+
+                                                    <Image 
+                                                    HorizontalOptions="FillAndExpand"
+                                                    Aspect="AspectFill"
+                                                    IsVisible="{Binding parentComment.supportItemComments.isImageNull}"
+                                                    Source="{Binding parentComment.supportItemComments.commentFiles, Converter={StaticResource urlJoinConverter}}"
+                                                    VerticalOptions="Fill">
+                                                        <Image.HeightRequest>
+                                                            <OnIdiom x:TypeArguments="x:Double">
+                                                                <OnIdiom.Phone>200</OnIdiom.Phone>
+                                                                <OnIdiom.Tablet>300</OnIdiom.Tablet>
+                                                                <OnIdiom.Desktop>200</OnIdiom.Desktop>
+                                                            </OnIdiom>
+                                                        </Image.HeightRequest>
+                                                        <Image.WidthRequest>
+                                                            <OnIdiom x:TypeArguments="x:Double">
+                                                                <OnIdiom.Phone>200</OnIdiom.Phone>
+                                                                <OnIdiom.Tablet>300</OnIdiom.Tablet>
+                                                                <OnIdiom.Desktop>200</OnIdiom.Desktop>
+                                                            </OnIdiom>
+                                                        </Image.WidthRequest>
+                                                    </Image>
+                                                </StackLayout>
+
+                                                <StackLayout 
+                                                IsVisible="{Binding parentComment.supportItemComments.isDocFile}"
+                                                Orientation="Vertical">
+
+                                                    <Image 
+                                                    HorizontalOptions="StartAndExpand"
+                                                    Aspect="AspectFill"
+                                                    IsVisible="{Binding parentComment.supportItemComments.isImageNull}"
+                                                    Source="{Binding parentComment.supportItemComments.commentFiles, Converter={StaticResource urlJoinConverter}}"
+                                                    VerticalOptions="Fill">
+                                                        <Image.HeightRequest>
+                                                            <OnIdiom x:TypeArguments="x:Double">
+                                                                <OnIdiom.Phone>70</OnIdiom.Phone>
+                                                                <OnIdiom.Tablet>100</OnIdiom.Tablet>
+                                                                <OnIdiom.Desktop>70</OnIdiom.Desktop>
+                                                            </OnIdiom>
+                                                        </Image.HeightRequest>
+                                                        <Image.WidthRequest>
+                                                            <OnIdiom x:TypeArguments="x:Double">
+                                                                <OnIdiom.Phone>50</OnIdiom.Phone>
+                                                                <OnIdiom.Tablet>75</OnIdiom.Tablet>
+                                                                <OnIdiom.Desktop>50</OnIdiom.Desktop>
+                                                            </OnIdiom>
+                                                        </Image.WidthRequest>
+                                                    </Image>
+                                                </StackLayout>
+
+                                                <StackLayout 
+                                                Padding="5"
+                                                Margin="0,5"
+                                                HorizontalOptions="StartAndExpand"
+                                                BackgroundColor="{Binding parentComment.supportItemComments.BGColor}"
+                                                IsVisible="{Binding parentComment.supportItemComments.isMultipleAttachments}"
+                                                Orientation="Vertical">
+
+                                                    <Image 
+                                                    HorizontalOptions="CenterAndExpand"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    Aspect="AspectFill"
+                                                    Source="ic_doc_xx.png">
+                                                        <Image.HeightRequest>
+                                                            <OnIdiom x:TypeArguments="x:Double">
+                                                                <OnIdiom.Phone>70</OnIdiom.Phone>
+                                                                <OnIdiom.Tablet>100</OnIdiom.Tablet>
+                                                                <OnIdiom.Desktop>70</OnIdiom.Desktop>
+                                                            </OnIdiom>
+                                                        </Image.HeightRequest>
+                                                        <Image.WidthRequest>
+                                                            <OnIdiom x:TypeArguments="x:Double">
+                                                                <OnIdiom.Phone>50</OnIdiom.Phone>
+                                                                <OnIdiom.Tablet>75</OnIdiom.Tablet>
+                                                                <OnIdiom.Desktop>50</OnIdiom.Desktop>
+                                                            </OnIdiom>
+                                                        </Image.WidthRequest>
+                                                    </Image>
+
+                                                    <Label
+                                                    Text="{Binding parentComment.supportItemComments.fileCount}"
+                                                    HorizontalOptions="CenterAndExpand"
+                                                    HorizontalTextAlignment="Center"
+                                                    TextColor="{Binding parentComment.supportItemComments.TextColor}"
+                                                    Style="{StaticResource CommentListviewStyle}"/>
+
+                                                    <!--<Button 
+                                                        Text="View"
+                                                        BackgroundColor="#82c122"
+                                                        Clicked="ViewCommentAttachments"
+                                                        HorizontalOptions="StartAndExpand"
+                                                        TextColor="White"
+                                                        Style="{StaticResource RequesterButtonStyle}"/>-->
+                                                    <StackLayout.HeightRequest>
+                                                        <OnIdiom x:TypeArguments="x:Double">
+                                                            <OnIdiom.Phone>100</OnIdiom.Phone>
+                                                            <OnIdiom.Tablet>150</OnIdiom.Tablet>
+                                                            <OnIdiom.Desktop>100</OnIdiom.Desktop>
+                                                        </OnIdiom>
+                                                    </StackLayout.HeightRequest>
+                                                    <StackLayout.WidthRequest>
+                                                        <OnIdiom x:TypeArguments="x:Double">
+                                                            <OnIdiom.Phone>200</OnIdiom.Phone>
+                                                            <OnIdiom.Tablet>300</OnIdiom.Tablet>
+                                                            <OnIdiom.Desktop>200</OnIdiom.Desktop>
+                                                        </OnIdiom>
+                                                    </StackLayout.WidthRequest>
+                                                </StackLayout>
+
+                                                <StackLayout
+                                                Orientation="Horizontal">
+                                                    <Label 
+                                                    Text="{Binding parentComment.supportItemComments.createdTime, Converter={StaticResource dateTimeConverter}}"
+                                                    TextColor="{Binding parentComment.supportItemComments.TextColor}"
+                                                    Style="{StaticResource CommentDateListviewStyle}"/>
+
+                                                    <Label 
+                                                    Text="{Binding replyCount}"
+                                                    IsVisible="{Binding replyVisibility}"
+                                                    TextColor="{Binding parentComment.supportItemComments.TextColor}"
+                                                    HorizontalOptions="CenterAndExpand"
+                                                    HorizontalTextAlignment="Center"
+                                                    Style="{StaticResource CommentDateListviewStyle}">
+                                                    </Label>
+
+                                                    <StackLayout
+                                                    Orientation="Horizontal"
+                                                    IsVisible="{Binding parentComment.supportItemComments.ReplyVisibility}"
+                                                    HorizontalOptions="EndAndExpand">
+
+                                                        <Image 
+                                                        Source="{Binding parentComment.supportItemComments.ArrowSource}">
+                                                            <Image.WidthRequest>
+                                                                <OnIdiom x:TypeArguments="x:Double">
+                                                                    <OnIdiom.Phone>15</OnIdiom.Phone>
+                                                                    <OnIdiom.Tablet>23</OnIdiom.Tablet>
+                                                                    <OnIdiom.Desktop>15</OnIdiom.Desktop>
+                                                                </OnIdiom>
+                                                            </Image.WidthRequest>
+                                                            <Image.HeightRequest>
+                                                                <OnIdiom x:TypeArguments="x:Double">
+                                                                    <OnIdiom.Phone>15</OnIdiom.Phone>
+                                                                    <OnIdiom.Tablet>23</OnIdiom.Tablet>
+                                                                    <OnIdiom.Desktop>15</OnIdiom.Desktop>
+                                                                </OnIdiom>
+                                                            </Image.HeightRequest>
+                                                        </Image>
+
+                                                        <Label 
+                                                        Text="{Binding parentComment.supportItemComments.replyText}"
+                                                        TextColor="{Binding parentComment.supportItemComments.TextColor}"
+                                                        HorizontalOptions="EndAndExpand"
+                                                        HorizontalTextAlignment="End"
+                                                        Style="{StaticResource CommentDateListviewStyle}">
+                                                        </Label>
+                                                    </StackLayout>
+
+                                                    <Button
+                                                    x:Name="approval_button"
+                                                    Text="Waiting for approval"
+                                                    BackgroundColor="White"
+                                                    TextColor="#f3872c"
+                                                    BorderColor="#f3872c"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    BorderWidth="1"
+                                                    IsVisible="{Binding parentComment.supportItemComments.ApprovalVisibility}"
+                                                    Style="{StaticResource ApprovalButtonStyle}"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                                <ListView.Footer>
+                                    <Label/>
+                                </ListView.Footer>
+                            </ListView>
+
+                            <ImageButton 
+                                x:Name="call_satck"
+                                Source="ic_requester_call_xx.png"
+                                BackgroundColor="Transparent"
+                                IsVisible="false"
+                                AbsoluteLayout.LayoutFlags="PositionProportional"  
+                                AbsoluteLayout.LayoutBounds="{OnIdiom Phone='.95,.95,50,50', Tablet = '.95,.95,75,75'}" 
+                                />
+
+                            <Label 
+                                Style="{StaticResource RequestMessageLabelStyle}"
+                                AbsoluteLayout.LayoutFlags="All" 
+                                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                HorizontalOptions="CenterAndExpand"
+                                HorizontalTextAlignment="Center"
+                                VerticalOptions="CenterAndExpand"
+                                VerticalTextAlignment="Center"
+                                x:Name="commentmessage_label"/>
+                        </AbsoluteLayout>
+
+                        <Grid
+                            VerticalOptions="End"
+                            x:Name="newcomment_stack"
+                            Margin="2">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="8*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image 
+                                Grid.Row="0" 
+                                Grid.Column="0"
+                                Margin="1,0"
+                                VerticalOptions="CenterAndExpand"
+                                x:Name="Attachment_Image"
+                                Source="ic_attachment_xx.png">
+                                <Image.WidthRequest>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>40</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>60</OnIdiom.Tablet>
+                                        <OnIdiom.Desktop>40</OnIdiom.Desktop>
+                                    </OnIdiom>
+                                </Image.WidthRequest>
+                                <Image.HeightRequest>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>40</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>60</OnIdiom.Tablet>
+                                        <OnIdiom.Desktop>40</OnIdiom.Desktop>
+                                    </OnIdiom>
+                                </Image.HeightRequest>
+                            </Image>
+
+                            <StackLayout
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                BackgroundColor="#f1f1f1">
+                                <Editor
+                                    x:Name="commentbody_entry"
+                                    Margin="7,0,0,0"
+                                    Placeholder="Add your comment here"
+                                    BackgroundColor="#f1f1f1"
+                                    PlaceholderColor = "#a39ea1"
+                                    TextColor = "#54493b"
+                                    Style="{StaticResource AddCommentEditorStyle}">
+                                    <Editor.HeightRequest>
+                                        <OnIdiom x:TypeArguments="x:Double">
+                                            <OnIdiom.Phone>60</OnIdiom.Phone>
+                                            <OnIdiom.Tablet>90</OnIdiom.Tablet>
+                                            <OnIdiom.Desktop>60</OnIdiom.Desktop>
+                                        </OnIdiom>
+                                    </Editor.HeightRequest>
+                                </Editor>
+                            </StackLayout>
+
+                            <StackLayout 
+                                x:Name="sendcomment_stack"
+                                IsEnabled="False"
+                                Margin="1,0"
+                                VerticalOptions="CenterAndExpand"
+                                Grid.Row="0" 
+                                Grid.Column="2">
+
+                                <Image 
+                                    x:Name="sendcomment_image"
+                                    Source="ic_gray_sendcomment_xx.png">
+                                    <Image.WidthRequest>
+                                        <OnIdiom x:TypeArguments="x:Double">
+                                            <OnIdiom.Phone>40</OnIdiom.Phone>
+                                            <OnIdiom.Tablet>60</OnIdiom.Tablet>
+                                            <OnIdiom.Desktop>40</OnIdiom.Desktop>
+                                        </OnIdiom>
+                                    </Image.WidthRequest>
+                                    <Image.HeightRequest>
+                                        <OnIdiom x:TypeArguments="x:Double">
+                                            <OnIdiom.Phone>40</OnIdiom.Phone>
+                                            <OnIdiom.Tablet>60</OnIdiom.Tablet>
+                                            <OnIdiom.Desktop>40</OnIdiom.Desktop>
+                                        </OnIdiom>
+                                    </Image.HeightRequest>
+                                </Image>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentPage>

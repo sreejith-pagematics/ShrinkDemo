@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShrinkUIDemo.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <ListView   
+    x:Name="homelistview"
+    HasUnevenRows="True"
+                ItemTapped="HomeOptionsTapped"
+    SeparatorColor="#cecece"
+    SelectionMode="None"
+    Margin="10"
+    SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Border
+                        Stroke="#bdbdbd"
+                        StrokeThickness="1"
+                        Padding="8"
+                        Margin="5"
+                        BackgroundColor="Gray">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="40" />
+                                    </Border.StrokeShape>
+
+                                    <StackLayout 
+                            VerticalOptions="FillAndExpand"
+                            Margin="5,0,5,0"
+                            Orientation="Horizontal">
+
+                                        <Label 
+                                Text="{Binding Title}"
+                                HorizontalOptions="StartAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                TextColor="White">
+                                            <Label.FontSize>
+                                                <OnIdiom x:TypeArguments="x:Double">
+                                                    <OnIdiom.Phone>18</OnIdiom.Phone>
+                                                    <OnIdiom.Tablet>27</OnIdiom.Tablet>
+                                                    <OnIdiom.Desktop>18</OnIdiom.Desktop>
+                                                </OnIdiom>
+                                            </Label.FontSize>
+                                        </Label>
+                                    </StackLayout>
+                                    <Border.HeightRequest>
+                                        <OnIdiom x:TypeArguments="x:Double">
+                                            <OnIdiom.Phone>50</OnIdiom.Phone>
+                                            <OnIdiom.Tablet>75</OnIdiom.Tablet>
+                                            <OnIdiom.Desktop>50</OnIdiom.Desktop>
+                                        </OnIdiom>
+                                    </Border.HeightRequest>
+                                </Border>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                <ListView.Footer>
+                    <Label/>
+                </ListView.Footer>
+            </ListView>
+
+            <Grid
+Margin="5"
+x:Name="footer_layout"
+VerticalOptions="EndAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="19*" />
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="21*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout
+    Grid.Column="0"
+    VerticalOptions="CenterAndExpand"
+    Orientation="Vertical">
+
+                    <Image 
+        Style="{StaticResource FooterImageStyle}"
+        Source="ic_home_black_xx.png"/>
+
+                    <Label 
+        TextColor="Black"
+        Text="Home"
+        Style="{StaticResource FooterLabelStyle}"/>
+                </StackLayout>
+
+                <StackLayout
+    Grid.Column="1"
+    VerticalOptions="CenterAndExpand"
+    Orientation="Vertical">
+
+                    <Image 
+        Style="{StaticResource FooterImageStyle}"
+        Source="ic_keypad_gray_xx.png"/>
+
+                    <Label 
+        TextColor="#838383"
+        Text="Keypad"
+        Style="{StaticResource FooterLabelStyle}"/>
+                </StackLayout>
+
+                <StackLayout
+    Grid.Column="2"
+    VerticalOptions="CenterAndExpand"
+    Orientation="Vertical">
+
+                    <Image 
+        Style="{StaticResource FooterImageStyle}"
+        Source="ic_history_gray_xx.png"/>
+
+                    <Label 
+        TextColor="#838383"
+        Text="History"
+        Style="{StaticResource FooterLabelStyle}"/>
+                </StackLayout>
+
+                <StackLayout
+    Grid.Column="3"
+    VerticalOptions="CenterAndExpand"
+    Orientation="Vertical">
+
+                    <Image 
+        Style="{StaticResource FooterImageStyle}"
+        Source="ic_contacts_gray_xx.png"/>
+
+                    <Label 
+        TextColor="#838383"
+        Text="Contacts"
+        Style="{StaticResource FooterLabelStyle}"/>
+
+                </StackLayout>
+
+                <StackLayout
+    Grid.Column="4"
+    VerticalOptions="CenterAndExpand"
+    Orientation="Vertical">
+
+                    <Image 
+        Style="{StaticResource FooterImageStyle}"
+        Source="ic_request_gray_xx.png"/>
+
+                    <Label 
+        TextColor="#838383"
+        Text="Requests"
+        Style="{StaticResource FooterLabelStyle}"/>
+                </StackLayout>
+
+                <Grid.HeightRequest>
+                    <OnIdiom x:TypeArguments="x:Double">
+                        <OnIdiom.Phone>120</OnIdiom.Phone>
+                        <OnIdiom.Tablet>180</OnIdiom.Tablet>
+                        <OnIdiom.Desktop>120</OnIdiom.Desktop>
+                    </OnIdiom>
+                </Grid.HeightRequest>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
